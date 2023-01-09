@@ -1,8 +1,11 @@
-input.onButtonPressed(Button.B, function () {
-    Move = false
-})
 input.onButtonPressed(Button.A, function () {
     Move = true
+    basic.showIcon(IconNames.Yes)
+})
+input.onButtonPressed(Button.B, function () {
+    Move = false
+    maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
+    maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
 })
 let Move = false
 huskylens.initI2c()
@@ -14,7 +17,6 @@ basic.showIcon(IconNames.StickFigure)
 basic.forever(function () {
     huskylens.request()
     if (Move) {
-        basic.showIcon(IconNames.Yes)
         if (huskylens.isAppear(1, HUSKYLENSResultType_t.HUSKYLENSResultBlock)) {
             basic.showNumber(1)
             maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
