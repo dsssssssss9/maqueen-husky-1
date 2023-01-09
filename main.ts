@@ -29,7 +29,7 @@ basic.forever(function () {
             maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
         } else {
             maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
-            maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
+            maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOff)
         }
     } else {
         maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
