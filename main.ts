@@ -16,12 +16,15 @@ basic.forever(function () {
     if (Move) {
         basic.showIcon(IconNames.Yes)
         if (huskylens.isAppear(1, HUSKYLENSResultType_t.HUSKYLENSResultBlock)) {
+            basic.showNumber(1)
             maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
             maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOff)
         } else if (huskylens.isAppear(2, HUSKYLENSResultType_t.HUSKYLENSResultBlock)) {
+            basic.showNumber(2)
             maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
             maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
-        } else if (huskylens.isAppear(2, HUSKYLENSResultType_t.HUSKYLENSResultBlock)) {
+        } else if (huskylens.isAppear(3, HUSKYLENSResultType_t.HUSKYLENSResultBlock)) {
+            basic.showNumber(3)
             maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
             maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
         } else {
@@ -29,6 +32,8 @@ basic.forever(function () {
             maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
         }
     } else {
+        maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
+        maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
         maqueen.motorStop(maqueen.Motors.All)
         basic.showIcon(IconNames.No)
     }
